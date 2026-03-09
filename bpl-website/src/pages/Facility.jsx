@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
 import FadeInSection from '../components/FadeInSection'
-import PlaceholderImage from '../components/PlaceholderImage'
+import battingLanesImg from '../assets/batting_lanes.png'
+import facilityRenderingImg from '../assets/facility_rendering.png'
+import weightRoomImg from '../assets/bpl_weight_room.jpeg'
 
 export default function Facility() {
   return (
@@ -39,7 +41,7 @@ export default function Facility() {
                   ))}
                 </ul>
               </div>
-              <PlaceholderImage label="Training Cages — Render Coming Soon" height="h-72" />
+              <img src={battingLanesImg} alt="Training Cages & Lanes" className="rounded-xl h-72 w-full object-cover" />
             </div>
           </FadeInSection>
         </div>
@@ -51,7 +53,7 @@ export default function Facility() {
           <FadeInSection>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="order-2 lg:order-1">
-                <PlaceholderImage label="Turf Infield Area — Render Coming Soon" height="h-72" />
+                <img src={facilityRenderingImg} alt="Team Training Area" className="rounded-xl h-72 w-full object-cover" />
               </div>
               <div className="order-1 lg:order-2">
                 <h2 className="text-3xl font-heading font-bold text-navy mb-6">Team Training Area</h2>
@@ -95,7 +97,7 @@ export default function Facility() {
                   Programming emphasis: rotational power, lower body strength, arm care, deceleration training, speed and agility.
                 </p>
               </div>
-              <PlaceholderImage label="Weight Room — Render Coming Soon" height="h-72" />
+              <img src={weightRoomImg} alt="Strength & Performance Weight Room" className="rounded-xl h-72 w-full object-cover" />
             </div>
           </FadeInSection>
         </div>

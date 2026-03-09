@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import FadeInSection from '../components/FadeInSection'
-import PlaceholderImage from '../components/PlaceholderImage'
+import batWallImg from '../assets/bat_wall.png'
 import ContactForm from '../components/ContactForm'
 
 export default function GetInvolved() {
@@ -40,7 +40,7 @@ export default function GetInvolved() {
                   Every founding supporter — whether a local business, an individual fan, or an investor — will be permanently recognized on the Bat Wall inside Bend Performance Lab. This is a limited, one-time founding opportunity to be part of building Bend's baseball and softball home.
                 </p>
               </div>
-              <PlaceholderImage label="Bat Wall Concept — Coming Soon" height="h-72" />
+              <img src={batWallImg} alt="The Bat Wall Society" className="rounded-xl h-72 w-full object-cover" />
             </div>
           </FadeInSection>
         </div>
