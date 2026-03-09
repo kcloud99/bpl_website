@@ -27,7 +27,6 @@ export default function Footer() {
                 { to: '/programs', label: 'Programs' },
                 { to: '/founders', label: 'Founders' },
                 { to: '/get-involved', label: 'Get Involved' },
-                { to: '/tournaments', label: 'Tournaments' },
               ].map((link) => (
                 <Link
                   key={link.to}

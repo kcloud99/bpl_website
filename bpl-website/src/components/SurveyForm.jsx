@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import submitForm from '../utils/submitForm'
 
 const FACILITY_AREAS = [
   'Batting cages',
@@ -59,11 +60,13 @@ export default function SurveyForm() {
     })
   }
 
+  const [submitting, setSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState(false)
   const [errors, setErrors] = useState({})
 
   const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     const newErrors = {}
     if (!form.name.trim()) newErrors.name = 'Please enter your name'
@@ -78,7 +81,16 @@ export default function SurveyForm() {
       return
     }
     setErrors({})
-    setSubmitted(true)
+    setSubmitting(true)
+    setSubmitError(false)
+    try {
+      await submitForm('survey', form)
+      setSubmitted(true)
+    } catch {
+      setSubmitError(true)
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   const totalSections = SECTIONS.length
@@ -317,6 +329,9 @@ export default function SurveyForm() {
       </div>
 
       {/* Navigation */}
+      {submitError && (
+        <p className="text-red-500 text-sm text-center">Something went wrong. Please try again.</p>
+      )}
       <div className="flex items-center justify-between pt-6">
         {currentSection > 0 ? (
           <button
@@ -347,9 +362,10 @@ export default function SurveyForm() {
         ) : (
           <button
             type="submit"
-            className="px-10 py-3.5 bg-gradient-to-r from-steel to-steel-light hover:from-steel-light hover:to-steel text-white text-base font-semibold rounded-lg btn-glow transition-all duration-200 shadow-md"
+            disabled={submitting}
+            className="px-10 py-3.5 bg-gradient-to-r from-steel to-steel-light hover:from-steel-light hover:to-steel text-white text-base font-semibold rounded-lg btn-glow transition-all duration-200 shadow-md disabled:opacity-50"
           >
-            Submit Survey
+            {submitting ? 'Submitting...' : 'Submit Survey'}
           </button>
         )}
       </div>

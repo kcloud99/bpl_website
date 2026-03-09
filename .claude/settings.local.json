@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "WebFetch(domain:unsplash.com)",
-      "WebFetch(domain:api.unsplash.com)"
+      "WebFetch(domain:api.unsplash.com)",
+      "WebFetch(domain:www.netlify.com)"
     ]
   }
 }

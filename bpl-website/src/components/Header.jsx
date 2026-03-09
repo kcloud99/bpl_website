@@ -8,7 +8,6 @@ const navLinks = [
   { to: '/programs', label: 'Programs' },
   { to: '/founders', label: 'Founders' },
   { to: '/get-involved', label: 'Get Involved' },
-  { to: '/tournaments', label: 'Tournaments' },
 ]
 
 export default function Header() {

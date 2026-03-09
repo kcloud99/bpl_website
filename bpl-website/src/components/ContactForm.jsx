@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import submitForm from '../utils/submitForm'
 
 const INTEREST_OPTIONS = [
   'Business Sponsorship',
@@ -9,6 +10,8 @@ const INTEREST_OPTIONS = [
 
 export default function ContactForm({ defaultInterest = '' }) {
   const [submitted, setSubmitted] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [error, setError] = useState(false)
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -21,9 +24,18 @@ export default function ContactForm({ defaultInterest = '' }) {
     setForm((prev) => ({ ...prev, [field]: value }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    setSubmitted(true)
+    setSubmitting(true)
+    setError(false)
+    try {
+      await submitForm('contact', form)
+      setSubmitted(true)
+    } catch {
+      setError(true)
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   if (submitted) {
@@ -84,11 +96,15 @@ export default function ContactForm({ defaultInterest = '' }) {
         rows={4}
         className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-steel focus:ring-2 focus:ring-steel/20 outline-none transition-colors resize-none text-sm"
       />
+      {error && (
+        <p className="text-red-500 text-sm text-center">Something went wrong. Please try again.</p>
+      )}
       <button
         type="submit"
-        className="w-full px-8 py-3.5 bg-steel hover:bg-steel-light text-white font-semibold rounded-lg transition-colors text-sm"
+        disabled={submitting}
+        className="w-full px-8 py-3.5 bg-steel hover:bg-steel-light text-white font-semibold rounded-lg transition-colors text-sm disabled:opacity-50"
       >
-        Submit
+        {submitting ? 'Submitting...' : 'Submit'}
       </button>
     </form>
   )

@@ -1,13 +1,25 @@
 import { useState } from 'react'
+import submitForm from '../utils/submitForm'
 
 export default function EmailSignup() {
   const [submitted, setSubmitted] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [error, setError] = useState(false)
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    setSubmitted(true)
+    setSubmitting(true)
+    setError(false)
+    try {
+      await submitForm('email_signup', { name, email })
+      setSubmitted(true)
+    } catch {
+      setError(true)
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   if (submitted) {
@@ -25,29 +37,35 @@ export default function EmailSignup() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto">
-      <input
-        type="text"
-        placeholder="Name"
-        required
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        className="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:border-steel focus:ring-2 focus:ring-steel/30 outline-none transition-colors text-sm"
-      />
-      <input
-        type="email"
-        placeholder="Email"
-        required
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        className="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:border-steel focus:ring-2 focus:ring-steel/30 outline-none transition-colors text-sm"
-      />
-      <button
-        type="submit"
-        className="px-6 py-3 bg-gradient-to-r from-accent to-accent-light hover:from-accent-light hover:to-accent text-white font-semibold rounded-lg transition-all duration-300 text-sm whitespace-nowrap btn-glow btn-glow-accent shadow-md shadow-accent/15"
-      >
-        Join the BPL Community
-      </button>
+    <form onSubmit={handleSubmit} className="space-y-3 max-w-xl mx-auto">
+      <div className="flex flex-col sm:flex-row gap-3">
+        <input
+          type="text"
+          placeholder="Name"
+          required
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          className="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:border-steel focus:ring-2 focus:ring-steel/30 outline-none transition-colors text-sm"
+        />
+        <input
+          type="email"
+          placeholder="Email"
+          required
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:border-steel focus:ring-2 focus:ring-steel/30 outline-none transition-colors text-sm"
+        />
+        <button
+          type="submit"
+          disabled={submitting}
+          className="px-6 py-3 bg-gradient-to-r from-accent to-accent-light hover:from-accent-light hover:to-accent text-white font-semibold rounded-lg transition-all duration-300 text-sm whitespace-nowrap btn-glow btn-glow-accent shadow-md shadow-accent/15 disabled:opacity-50"
+        >
+          {submitting ? 'Joining...' : 'Join the BPL Community'}
+        </button>
+      </div>
+      {error && (
+        <p className="text-red-300 text-sm text-center">Something went wrong. Please try again.</p>
+      )}
     </form>
   )
 }

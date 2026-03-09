@@ -5,7 +5,6 @@ import Facility from './pages/Facility'
 import Programs from './pages/Programs'
 import Founders from './pages/Founders'
 import GetInvolved from './pages/GetInvolved'
-import Tournaments from './pages/Tournaments'
 
 export default function App() {
   return (
@@ -16,7 +15,6 @@ export default function App() {
         <Route path="/programs" element={<Programs />} />
         <Route path="/founders" element={<Founders />} />
         <Route path="/get-involved" element={<GetInvolved />} />
-        <Route path="/tournaments" element={<Tournaments />} />
       </Route>
     </Routes>
   )
