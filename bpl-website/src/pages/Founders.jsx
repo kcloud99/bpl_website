@@ -1,9 +1,14 @@
 import FadeInSection from '../components/FadeInSection'
+import mirandaImg from '../assets/profiles/miranda.png'
+import ianImg from '../assets/profiles/ian.png'
+import seanImg from '../assets/profiles/sean.png'
+import kyleImg from '../assets/profiles/kyle.png'
 
 const founders = [
   {
     name: 'Miranda Abrahams McLeod',
     initials: 'MA',
+    image: mirandaImg,
     title: 'Director of Softball & Strength Training',
     color: 'bg-steel',
     bio: [
@@ -19,6 +24,7 @@ const founders = [
   {
     name: 'Ian MacDougall',
     initials: 'IM',
+    image: ianImg,
     title: 'Director of Baseball Programs',
     color: 'bg-navy',
     bio: [
@@ -33,6 +39,7 @@ const founders = [
   {
     name: 'Sean Jacox',
     initials: 'SJ',
+    image: seanImg,
     title: 'Business Operations & Tournaments',
     color: 'bg-steel',
     bio: [
@@ -48,6 +55,7 @@ const founders = [
   {
     name: 'Kyle McLeod',
     initials: 'KM',
+    image: kyleImg,
     title: 'Business Management & Investor Relations',
     color: 'bg-navy',
     bio: [
@@ -95,9 +103,11 @@ export default function Founders() {
                 <div className="flex flex-col sm:flex-row gap-6 sm:gap-10">
                   {/* Avatar */}
                   <div className="shrink-0 flex flex-col items-center">
-                    <div className={`w-24 h-24 sm:w-28 sm:h-28 rounded-full ${founder.color} flex items-center justify-center`}>
-                      <span className="text-2xl sm:text-3xl font-heading font-bold text-white">{founder.initials}</span>
-                    </div>
+                    <img
+                      src={founder.image}
+                      alt={founder.name}
+                      className="w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover"
+                    />
                   </div>
                   {/* Bio */}
                   <div className="flex-1">
