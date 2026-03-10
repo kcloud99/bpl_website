@@ -439,7 +439,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {[
               {
-                quote: "Between the scheduling difficulties and baseball getting priority, our softball teams just don't have reliable indoor access during the winter months.",
+                quote: "Between the scheduling difficulties and baseball getting priority at many facilities, our softball teams just don't have reliable indoor access during the winter months.",
                 name: 'Kayleen',
                 title: 'President, Jr. Cougars Softball',
               },
