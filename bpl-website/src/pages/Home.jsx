@@ -11,6 +11,7 @@ import facilityRender from '../assets/facility_rendering.png'
 import weightRoom from '../assets/bpl_weight_room.jpeg'
 import sbCatcher from '../assets/bbsb/sb_catcher.png'
 import sbGirls from '../assets/bbsb/sb_girls.jpeg'
+import communityImg from '../assets/bbsb/community.png'
 
 // Animated counter hook for stats
 function useCountUp(target, duration = 2000) {
@@ -403,7 +404,7 @@ export default function Home() {
 
           <FadeInSection>
             <div className="mb-14">
-              <PlaceholderImage label="Community Events — Photo Coming Soon" height="h-64 sm:h-72" />
+              <img src={communityImg} alt="Bend baseball and softball community" className="w-full h-64 sm:h-72 object-cover rounded-xl" />
             </div>
           </FadeInSection>
 

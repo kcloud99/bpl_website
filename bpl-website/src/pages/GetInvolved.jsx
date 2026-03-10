@@ -52,14 +52,17 @@ export default function GetInvolved() {
           <FadeInSection>
             <div className="max-w-3xl mx-auto">
               <h2 className="text-3xl font-heading font-bold text-navy mb-6">Business Sponsorship</h2>
+              <p className="text-lg text-gray-text leading-relaxed mb-6">
+                Thousands of athletes and families will walk through BPL's doors each year — and as one of the first businesses to partner with us, you'll be front and center from day one.
+              </p>
               <p className="text-lg text-gray-text leading-relaxed mb-8">
-                Thousands of athletes and families will visit BPL each year. Business sponsors gain ongoing visibility inside the facility while supporting youth athletics and community development.
+                Early sponsors lock in the best placement and pricing before the facility opens. Whether it's signage in our training areas, logo presence at camps and tournaments, or digital features across our platforms — your brand will be seen by a dedicated, engaged audience of athletes, coaches, and families throughout Central Oregon.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
                 {[
-                  { tier: 'Grand Slam Sponsor', desc: 'Premier visibility package' },
-                  { tier: 'Home Run Sponsor', desc: 'Enhanced presence' },
-                  { tier: 'On Base Sponsor', desc: 'Community supporter' },
+                  { tier: 'Grand Slam Sponsor', desc: 'Premier in-facility signage, event naming rights, and featured digital placement' },
+                  { tier: 'Home Run Sponsor', desc: 'Prominent logo placement in training areas and inclusion at camps and tournaments' },
+                  { tier: 'On Base Sponsor', desc: 'Bat Wall recognition and community supporter visibility throughout the facility' },
                 ].map((tier) => (
                   <div key={tier.tier} className="bg-white rounded-xl p-6 shadow-sm text-center border border-gray-200/60">
                     <h3 className="text-lg font-heading font-bold text-navy mb-2">{tier.tier}</h3>
@@ -108,24 +111,11 @@ export default function GetInvolved() {
               <h2 className="text-3xl sm:text-4xl font-heading font-bold text-white mb-6">
                 Invest in Bend Performance Lab
               </h2>
-              <p className="text-lg text-white/70 leading-relaxed mb-8">
-                BPL addresses a clear infrastructure gap in Central Oregon. The facility combines multiple revenue streams — team training, individual memberships, lessons, camps, leagues, tournaments, and office subleasing — designed for sustainable, diversified income.
+              <p className="text-lg text-white/70 leading-relaxed mb-6">
+                BPL addresses a clear infrastructure gap in Central Oregon. We're building a sustainable, multi-revenue-stream facility — and we're offering equity opportunities to investors who want to be part of it from the ground floor.
               </p>
-              <div className="grid grid-cols-2 gap-4 mb-8">
-                {[
-                  { label: 'Target Raise', value: '$350K–$500K' },
-                  { label: 'Minimum Investment', value: '$25K' },
-                  { label: 'Target Opening', value: 'Fall 2026' },
-                  { label: 'Revenue Streams', value: '8+ Sources' },
-                ].map((item) => (
-                  <div key={item.label} className="bg-white/5 rounded-xl p-5 border border-white/10">
-                    <div className="text-xl sm:text-2xl font-heading font-bold text-white">{item.value}</div>
-                    <div className="text-sm text-white/50">{item.label}</div>
-                  </div>
-                ))}
-              </div>
-              <p className="text-sm text-white/40 mb-8 italic">
-                Revenue streams include: Memberships, lessons, team training, camps/clinics, leagues, tournaments, technology sessions, and office subleasing.
+              <p className="text-lg text-white/70 leading-relaxed mb-8">
+                If you're interested in learning more about investing in Bend Performance Lab, reach out below and we'll share the details.
               </p>
               <div className="text-center">
                 <button
