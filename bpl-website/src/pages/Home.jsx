@@ -439,7 +439,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {[
               {
-                quote: "Between the scheduling difficulties and baseball getting priority at many facilities, our softball teams just don't have reliable indoor access during the winter months.",
+                quote: "We are grateful for the indoor access that is currently available, but with limited access and high demand for shared space, our softball teams are not always able to consistently train indoors during the winter months. As softball continues to grow across Central Oregon, the need for additional facility space is growing alongside it.",
                 name: 'Kayleen',
                 title: 'President, Jr. Cougars Softball',
               },
