@@ -473,7 +473,7 @@ export default function Home() {
       </section>
 
       {/* ===== Section 8 — Community Input Survey ===== */}
-      <section className="bg-gradient-to-b from-white to-gray-bg/50 py-24 sm:py-32">
+      <section id="survey" className="bg-gradient-to-b from-white to-gray-bg/50 py-24 sm:py-32">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeInSection>
             <div className="text-center mb-12">
