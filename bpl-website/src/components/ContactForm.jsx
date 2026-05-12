@@ -2,9 +2,9 @@ import { useState } from 'react'
 import submitForm from '../utils/submitForm'
 
 const INTEREST_OPTIONS = [
+  'Bat Wall Society Pledge',
   'Business Sponsorship',
   'Personal Support',
-  'Investment',
   'General Inquiry',
 ]
 
