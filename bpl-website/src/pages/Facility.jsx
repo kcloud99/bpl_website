@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
 import FadeInSection from '../components/FadeInSection'
 import battingLanesImg from '../assets/batting_lanes.png'
-import facilityRenderingImg from '../assets/facility_rendering.png'
-import weightRoomImg from '../assets/bpl_weight_room.jpeg'
+import facilityRenderingImg from '../assets/facility_new.PNG'
+import weightRoomImg from '../assets/weight_room_new.PNG'
 
 export default function Facility() {
   return (
@@ -15,7 +15,7 @@ export default function Facility() {
             Inside Bend Performance Lab
           </h1>
           <p className="text-lg sm:text-xl text-gray-text max-w-2xl mx-auto">
-            A 17,682 sq ft baseball and softball performance facility designed for complete athlete development.
+            A 20k+ sq ft baseball and softball performance facility designed for complete athlete development.
           </p>
         </div>
       </section>
@@ -29,9 +29,9 @@ export default function Facility() {
                 <h2 className="text-3xl font-heading font-bold text-navy mb-6">Training Cages &amp; Lanes</h2>
                 <ul className="space-y-4">
                   {[
-                    '100\' long cage with optional divider — converts to 3 full-size bullpens or 2 x 50\' cages',
-                    '30\' hitting cage for focused work',
-                    'High-performance lab: 65\' x 25\' with HitTrax and Rapsodo integration',
+                    '7 - 55\' hitting and pitching cages for focused work',
+                    '3 - 70\' pitching lanes that also convert to full regulation live at bat area',
+                    'High-performance lab: 50\' x 50\' with HitTrax and Rapsodo integration',
                     'Retractable curtain system configurable for individual, small group, and team use',
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3">
@@ -59,8 +59,7 @@ export default function Facility() {
                 <h2 className="text-3xl font-heading font-bold text-navy mb-6">Team Training Area</h2>
                 <ul className="space-y-4">
                   {[
-                    '70\' x 45\' turfed infield area',
-                    'Converts to 4 x 17\' x 45\' tunnels or 2 x 35\' x 45\' spaces',
+                    '80\'x100\' turf area with retractable cages for full field work, or split up into multiple team areas',
                     'Designed for team practices, infield work, and defensive drills',
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3">
@@ -84,7 +83,7 @@ export default function Facility() {
                 <h2 className="text-3xl font-heading font-bold text-navy mb-6">Strength &amp; Performance</h2>
                 <ul className="space-y-4 mb-6">
                   {[
-                    '1,800 sq ft weight room: squat racks, barbells, baseball/softball-specific equipment, slam wall, sled area',
+                    '1,500 sq ft weight room: squat racks, barbells, baseball/softball-specific equipment, slam wall, sled area',
                     '700 sq ft plyometrics/medballs area for warmup, arm care, and recovery classes',
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3">
@@ -138,7 +137,7 @@ export default function Facility() {
               <h2 className="text-3xl font-heading font-bold text-navy mb-6">Professional Offices</h2>
               <ul className="space-y-4 text-left max-w-xl mx-auto">
                 {[
-                  '10 private office suites',
+                  '5 private office suites',
                   'Designed for performance-aligned professionals: physical therapists, sports psychologists, nutrition specialists, performance coaches',
                   'Weight room access included for tenants',
                   'Coworking space available',
@@ -163,11 +162,12 @@ export default function Facility() {
             </h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 max-w-4xl mx-auto mb-12">
               {[
-                { stat: '17,682', label: 'Square Feet' },
-                { stat: '8+', label: 'Training Lanes' },
-                { stat: '1,800', label: 'Sq Ft Weight Room' },
-                { stat: '10', label: 'Office Suites' },
-                { stat: '35+', label: 'Parking Spaces' },
+                { stat: '30 seat cafe', label: 'Viewing Area' },
+                { stat: '20k+', label: 'Square Feet' },
+                { stat: '10+', label: 'Training Lanes' },
+                { stat: '1,500', label: 'Sq Ft Weight Room' },
+                { stat: '5', label: 'Office Suites' },
+                { stat: '55+', label: 'Parking Spaces' },
               ].map((item) => (
                 <div key={item.label} className="text-center p-5 bg-gray-bg rounded-xl">
                   <div className="text-2xl sm:text-3xl font-heading font-black text-navy mb-1">{item.stat}</div>
@@ -175,7 +175,7 @@ export default function Facility() {
                 </div>
               ))}
             </div>
-            <p className="text-center text-gray-text mb-8">Location: East Bend, Oregon</p>
+            <p className="text-center text-gray-text mb-8">Location: North Bend, Oregon</p>
             <div className="text-center">
               <Link
                 to="/get-involved"
