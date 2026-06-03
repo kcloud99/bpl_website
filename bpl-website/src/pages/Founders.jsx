@@ -22,37 +22,6 @@ const founders = [
     role: 'At BPL: Leads all softball programming (lessons, clinics, camps, coach development) and oversees strength and conditioning operations.',
   },
   {
-    name: 'Ian MacDougall',
-    initials: 'IM',
-    image: ianImg,
-    title: 'Director of Baseball Programs',
-    color: 'bg-navy',
-    bio: [
-      'Former professional pitcher: Australian Baseball League (Perth Heat) and Frontier League (Traverse City Beach Bums).',
-      'Playing career: Summit High School (part of program\'s first league championship, 2007), Columbia Basin CC, Western Oregon University.',
-      'Co-owner of MacDougall & Sons Bat Company.',
-      'Head baseball coach at Caldera High School, co-managed the Gladiators to consecutive championships (2022–2023).',
-      'Active private pitching and hitting instructor serving Central Oregon youth athletes.',
-    ],
-    role: 'At BPL: Leads all baseball programming including lessons, clinics, camps, and coach development.',
-  },
-  {
-    name: 'Sean Jacox',
-    initials: 'SJ',
-    image: seanImg,
-    title: 'Business Operations & Tournaments',
-    color: 'bg-steel',
-    bio: [
-      'Central Oregon native, immersed in baseball since age 7.',
-      'Player-manager at Summit High School, 4 seasons of club baseball at COCC, 6 years on coaching staff.',
-      'Co-managed competitive adult teams to 4 straight league championships (2022–2025).',
-      'League President of Central Oregon Adult Baseball (after 3 years as Commissioner).',
-      'State Director for National Championship Sports (NCS) and Tournament Director for NABA.',
-      'Brings operational and financial management experience from non-profit and business management.',
-    ],
-    role: 'At BPL: Oversees business operations, tournament hosting, and league partnerships.',
-  },
-  {
     name: 'Kyle McLeod',
     initials: 'KM',
     image: kyleImg,
@@ -88,7 +57,7 @@ export default function Founders() {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeInSection>
             <p className="text-lg text-gray-text leading-relaxed text-center">
-              BPL was created by coaches, operators, and leaders deeply embedded in the Central Oregon baseball and softball community. The founders bring experience spanning professional baseball, national-level coaching, tournament operations, strength and conditioning, and business management. Several founders already operate training and tournament businesses that will feed directly into BPL's programming and customer base.
+              BPL was created by coaches, operators, and leaders deeply embedded in the Central Oregon baseball and softball community. The founders bring experience spanning professional baseball, national-level coaching, tournament operations, strength and conditioning, and business management. Founders already operate training and tournament businesses that will feed directly into BPL's programming and customer base.
             </p>
           </FadeInSection>
         </div>
