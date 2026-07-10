@@ -1,32 +1,70 @@
 import FadeInSection from '../components/FadeInSection'
 import mirandaImg from '../assets/profiles/miranda.png'
-import ianImg from '../assets/profiles/ian.png'
-import seanImg from '../assets/profiles/sean.png'
+import allenImg from '../assets/profiles/allen.png'
+import davidImg from '../assets/profiles/david.png'
+import wesImg from '../assets/profiles/wes.png'
 import kyleImg from '../assets/profiles/kyle.png'
 
 const founders = [
   {
-    name: 'Miranda Abrahams McLeod',
+    name: 'Miranda Abrahams McLeod, CSCS',
     initials: 'MA',
     image: mirandaImg,
-    title: 'Director of Softball & Strength Training',
+    title: 'Co-Founder & Director of Softball & Athletic Performance',
     color: 'bg-steel',
     bio: [
-      'Certified Strength and Conditioning Specialist (CSCS) with 10+ years in youth athlete development.',
+      'Certified Strength and Conditioning Specialist (CSCS) with 10+ years in youth athlete development and injury prevention.',
       'Former collegiate softball catcher/utility player with 25+ years of competitive experience.',
-      'Founder of Mojo Strength and Softball — a leading softball training resource in Central Oregon and nationally, currently traveling to hold clinics across multiple states.',
-      'Certified in Tincher Pitching methodology with additional credentials in injury resilience, kettlebell training, and pre/postnatal coaching.',
-      'Former President of Central Oregon Fastpitch (now merged into Crush Softball).',
-      '9-year Bend resident with deep relationships across the local softball community.',
+      'A leading softball training resource in Central Oregon and nationwide — having trained hundreds of athletes from beginners to collegiate-bound players, and currently traveling to hold clinics in other states.',
+      'Certified in Tincher Pitching methodology, with additional credentials in injury resilience (PFSCCA), StrongFirst Kettlebell Level 1, and pre/postnatal coaching (Girls Gone Strong).',
+      'Former President of Central Oregon Fastpitch and a 9-year Bend resident with deep relationships across the local softball community.',
     ],
     role: 'At BPL: Leads all softball programming (lessons, clinics, camps, coach development) and oversees strength and conditioning operations.',
+  },
+  {
+    name: 'Allen Cox',
+    initials: 'AC',
+    image: allenImg,
+    title: 'Director of Player Development',
+    color: 'bg-navy',
+    bio: [
+      '30+ years of experience in coaching, scouting, and player development.',
+      'A nationally respected career that has influenced the paths of 50+ professional baseball players and more than 500 athletes who advanced to collegiate programs.',
+    ],
+    role: 'At BPL: Leads player development across the program — mentoring athletes and coaches and holding every part of the facility to the standard of excellence and professionalism that BPL stands for.',
+  },
+  {
+    name: 'David Diaz',
+    initials: 'DD',
+    image: davidImg,
+    title: 'Director of Baseball',
+    color: 'bg-steel-dark',
+    bio: [
+      'Founder of Diaz Infield Development with 15+ years of coaching and player development experience.',
+      'Known for building a strong infield community and development culture.',
+      'Has helped players advance to collegiate and professional baseball through a detail-oriented approach to fundamentals, athletic development, game awareness, and elite infield play.',
+    ],
+    role: 'At BPL: Manages all aspects of baseball operations and programming — day-to-day training, coaching, and event management for all camps and clinics.',
+  },
+  {
+    name: 'Wes Harper',
+    initials: 'WH',
+    image: wesImg,
+    title: 'Director of Team Development',
+    color: 'bg-navy-light',
+    bio: [
+      'An impressive high school and college pitching career brings deep pitching expertise to Bend.',
+      'Coaches the Bend Elks and, alongside Allen and David, helps manage Oregon Premier Baseball.',
+      'The youngest member of the group — bringing a strong connection to player development, tech expertise, and a hungry work ethic.',
+    ],
+    role: 'At BPL: Manages the many teams that use the facility — overseeing scheduling, proper usage, equipment knowledge, and the consistent, excellent service we expect to provide.',
   },
   {
     name: 'Kyle McLeod',
     initials: 'KM',
     image: kyleImg,
-    title: 'Business Management & Investor Relations',
-    color: 'bg-navy',
+    title: 'Co-Founder & CEO',
+    color: 'bg-steel',
     bio: [
       'Background in small business operations, technology, and startup development.',
       'Experience guiding early-stage companies through capital raises, operational buildouts, and growth scaling.',
@@ -72,11 +110,21 @@ export default function Founders() {
                 <div className="flex flex-col sm:flex-row gap-6 sm:gap-10">
                   {/* Avatar */}
                   <div className="shrink-0 flex flex-col items-center">
-                    <img
-                      src={founder.image}
-                      alt={founder.name}
-                      className="w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover"
-                    />
+                    {founder.image ? (
+                      <img
+                        src={founder.image}
+                        alt={founder.name}
+                        className="w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover"
+                      />
+                    ) : (
+                      <div
+                        className={`w-24 h-24 sm:w-28 sm:h-28 rounded-full flex items-center justify-center ${founder.color}`}
+                      >
+                        <span className="text-2xl sm:text-3xl font-heading font-bold text-white tracking-wide">
+                          {founder.initials}
+                        </span>
+                      </div>
+                    )}
                   </div>
                   {/* Bio */}
                   <div className="flex-1">
