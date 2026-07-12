@@ -10,6 +10,7 @@ const founders = [
     name: 'Miranda Abrahams McLeod, CSCS',
     initials: 'MA',
     image: mirandaImg,
+    imageClass: 'object-top scale-125 origin-top',
     title: 'Co-Founder & Director of Softball & Athletic Performance',
     color: 'bg-steel',
     bio: [
@@ -20,18 +21,6 @@ const founders = [
       'Former President of Central Oregon Fastpitch and a 9-year Bend resident with deep relationships across the local softball community.',
     ],
     role: 'At BPL: Leads all softball programming (lessons, clinics, camps, coach development) and oversees strength and conditioning operations.',
-  },
-  {
-    name: 'Allen Cox',
-    initials: 'AC',
-    image: allenImg,
-    title: 'Director of Player Development',
-    color: 'bg-navy',
-    bio: [
-      '30+ years of experience in coaching, scouting, and player development.',
-      'A nationally respected career that has influenced the paths of 50+ professional baseball players and more than 500 athletes who advanced to collegiate programs.',
-    ],
-    role: 'At BPL: Leads player development across the program — mentoring athletes and coaches and holding every part of the facility to the standard of excellence and professionalism that BPL stands for.',
   },
   {
     name: 'David Diaz',
@@ -45,6 +34,18 @@ const founders = [
       'Has helped players advance to collegiate and professional baseball through a detail-oriented approach to fundamentals, athletic development, game awareness, and elite infield play.',
     ],
     role: 'At BPL: Manages all aspects of baseball operations and programming — day-to-day training, coaching, and event management for all camps and clinics.',
+  },
+  {
+    name: 'Allen Cox',
+    initials: 'AC',
+    image: allenImg,
+    title: 'Director of Player Development',
+    color: 'bg-navy',
+    bio: [
+      '30+ years of experience in coaching, scouting, and player development.',
+      'A nationally respected career that has influenced the paths of 50+ professional baseball players and more than 500 athletes who advanced to collegiate programs.',
+    ],
+    role: 'At BPL: Leads player development across the program — mentoring athletes and coaches and holding every part of the facility to the standard of excellence and professionalism that BPL stands for.',
   },
   {
     name: 'Wes Harper',
@@ -111,11 +112,13 @@ export default function Founders() {
                   {/* Avatar */}
                   <div className="shrink-0 flex flex-col items-center">
                     {founder.image ? (
-                      <img
-                        src={founder.image}
-                        alt={founder.name}
-                        className="w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover"
-                      />
+                      <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden">
+                        <img
+                          src={founder.image}
+                          alt={founder.name}
+                          className={`w-full h-full object-cover ${founder.imageClass || ''}`}
+                        />
+                      </div>
                     ) : (
                       <div
                         className={`w-24 h-24 sm:w-28 sm:h-28 rounded-full flex items-center justify-center ${founder.color}`}
