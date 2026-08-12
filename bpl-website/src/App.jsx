@@ -6,6 +6,7 @@ import Facility from './pages/Facility'
 import Programs from './pages/Programs'
 import Founders from './pages/Founders'
 import GetInvolved from './pages/GetInvolved'
+import FoundingMembers from './pages/FoundingMembers'
 
 export default function App() {
   const location = useLocation()
@@ -26,6 +27,8 @@ export default function App() {
         <Route path="/programs" element={<Programs />} />
         <Route path="/founders" element={<Founders />} />
         <Route path="/get-involved" element={<GetInvolved />} />
+        {/* Unlisted — reachable from the Get Involved hero, not from site nav */}
+        <Route path="/founding-members" element={<FoundingMembers />} />
       </Route>
     </Routes>
   )

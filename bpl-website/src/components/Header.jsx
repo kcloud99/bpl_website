@@ -2,6 +2,9 @@ import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import logo from '../assets/bpl-logo.png'
 
+// Routes whose hero sits on a dark image/navy background — keep the light header treatment
+const DARK_HERO_PATHS = ['/', '/founding-members']
+
 const navLinks = [
   { to: '/', label: 'Home' },
   { to: '/facility', label: 'Facility' },
@@ -15,9 +18,8 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
   const location = useLocation()
 
-  const isHome = location.pathname === '/'
-  // Sub-pages have light hero backgrounds — need dark text when unscrolled
-  const lightHero = !isHome
+  // Most sub-pages have light hero backgrounds — they need dark text when unscrolled
+  const lightHero = !DARK_HERO_PATHS.includes(location.pathname)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50)

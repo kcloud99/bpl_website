@@ -1,8 +1,10 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import FadeInSection from '../components/FadeInSection'
 import batWallImg from '../assets/bat_wall.png'
 import bplAdvertisingImg from '../assets/bpl_advertising.png'
 import ContactForm from '../components/ContactForm'
+import { FOUNDING_SPOTS_TOTAL, FOUNDING_SPOTS_REMAINING } from '../utils/foundingSpots'
 
 const CORE_BENEFITS = [
   'A real bat mounted on the wall inside Bend Performance Lab',
@@ -172,6 +174,25 @@ export default function GetInvolved() {
             >
               For Individuals &amp; Families
             </button>
+          </div>
+
+          {/* Founding memberships — unlisted page, only reachable from here */}
+          <div className="mt-6 flex flex-col items-center">
+            <Link
+              to="/founding-members"
+              className="btn-glow btn-glow-accent inline-flex items-center gap-2 px-8 py-4 bg-navy hover:bg-navy-light text-white border-2 border-accent font-semibold rounded-lg transition-colors text-base"
+            >
+              Founding Memberships
+              <svg className="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
+            <p className="mt-3 text-sm text-gray-text">
+              $25,000 &middot; Lifetime family membership &middot;{' '}
+              <span className="font-semibold text-navy">
+                {FOUNDING_SPOTS_REMAINING} of {FOUNDING_SPOTS_TOTAL} spots remaining
+              </span>
+            </p>
           </div>
         </div>
       </section>
